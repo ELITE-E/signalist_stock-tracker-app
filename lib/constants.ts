@@ -1,7 +1,7 @@
 export const NAV_ITEMS = [
     { href: '/', label: 'Dashboard' },
     { href: '/search', label: 'Search' },
-    // { href: '/watchlist', label: 'Watchlist' },
+     { href: '/watchlist', label: 'Watchlist' },
 ];
 
 // Sign-up form select options
@@ -322,6 +322,7 @@ export const POPULAR_STOCK_SYMBOLS = [
     'DIDI',
     'GRAB',
     'SE',
+    'SAF'
 ];
 
 export const NO_MARKET_NEWS =
