@@ -1,9 +1,12 @@
 import { Star } from 'lucide-react';
 import { searchStocks } from '@/lib/actions/finnhub.actions';
 import SearchCommand from '@/components/SearchCommand';
+import { getWatchlistWithData } from '@/lib/actions/watchlist.actions';
+import { WatchlistTable } from '@/components/WatchlistTable';
+
 
 const Watchlist = async () => {
-  const watchlist = []; // We'll get the actual watchlist items later
+  const watchlist = await getWatchlistWithData()
   const initialStocks = await searchStocks();
 
   // Empty state
@@ -29,7 +32,7 @@ const Watchlist = async () => {
           <h2 className="watchlist-title">Watchlist</h2>
           <SearchCommand initialStocks={initialStocks} />
         </div>
-        {/* WatchlistTable */}
+    <WatchlistTable watchlist={watchlist}/>
       </div>
     </section>
   );
